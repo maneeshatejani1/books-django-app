@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<form action="{% url 'update' book.id %}" method="post">
+    {% csrf_token %}
+    <label for="name">Name</label><br>
+    <input type="text" name="bookname" id="name" value="{{ book.name }}">
+    <input type="submit" value="Update">
+</form>
+
+<!-- <h2>Book Name: {{ book.name }}</h2>
+<p> Author: {{book.author.first_name}} </p>
+<p>Publication Year: {{book.publication_year}}</p> -->
+
+{% endblock content %}

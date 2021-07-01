@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Book Collection</h1>
+{% if list_of_books %}
+    <ul> 
+    {% for book in list_of_books %}
+        <li><a href="{% url 'detail' book.id %}">{{ book.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Books are available.</p>
+{% endif %}
+
+{% endblock content %}
+
