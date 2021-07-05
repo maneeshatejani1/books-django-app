@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<form action="{% url 'create' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <!-- <label for="name">Name</label><br>
+    <input type="text" name="bookname" id="name" value="{{ book.name }}"> -->
+    <input type="submit" value="Create">
+</form>
+
+<!-- <h2>Book Name: {{ book.name }}</h2>
+<p> Author: {{book.author.first_name}} </p>
+<p>Publication Year: {{book.publication_year}}</p> -->
+
+{% endblock content %}

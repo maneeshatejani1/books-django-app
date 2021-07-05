@@ -2,10 +2,11 @@
 
 {% block content %}
 <br>
-<form action="{% url 'update' book.id %}" method="post">
+<form action="{% url 'read_or_update' book.id %}" method="post">
     {% csrf_token %}
-    <label for="name">Name</label><br>
-    <input type="text" name="bookname" id="name" value="{{ book.name }}">
+    {{form.as_p}}
+    <!-- <label for="name">Name</label><br>
+    <input type="text" name="bookname" id="name" value="{{ book.name }}"> -->
     <input type="submit" value="Update">
 </form>
 
