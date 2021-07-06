@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Book
+from books.models import Book
 
 
 # class BookForm(forms.Form):
@@ -12,5 +12,5 @@ from .models import Book
 class BookForm(forms.ModelForm):
     class Meta:
         model = Book
-        fields = ['name', 'publication_year', 'author']
+        fields = ['name', 'publication_date', 'author']
         # exclude = ['id',]
