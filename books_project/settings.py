@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'django_countries',
+    'accounts.apps.AccountsConfig',
     'books.apps.BooksConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -101,6 +103,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+    {
+        'NAME': 'accounts.validators.CustomPasswordValidator',
+    },
 ]
 
 
@@ -131,3 +136,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
+
+
+AUTH_USER_MODEL = "accounts.CustomUser"

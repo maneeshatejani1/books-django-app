@@ -23,7 +23,7 @@ def create(request):
             author = Author.objects.get(pk=form.cleaned_data['author'].id)
             book = Book.objects.create(
                 name=form.cleaned_data['name'],
-                publication_year=form.cleaned_data['publication_year'],
+                publication_date=form.cleaned_data['publication_date'],
                 author=author
             )
             book.save()
@@ -42,7 +42,7 @@ def read_or_update(request, book_id):
             print("Field Error:", field.name,  field.errors)
         if form.is_valid():
             book.name = form.cleaned_data['name']
-            book.publication_year = form.cleaned_data['publication_year']
+            book.publication_date = form.cleaned_data['publication_date']
             book.save()
             return HttpResponseRedirect(reverse('index'))
     else:
