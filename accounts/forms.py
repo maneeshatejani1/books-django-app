@@ -38,6 +38,7 @@ class CustomUserCreationForm(UserCreationForm):
             instance.save()
         return instance
 
+
 class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = get_user_model()
