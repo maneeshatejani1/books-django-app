@@ -33,3 +33,12 @@ class Book(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class CustomLog(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    message = models.CharField(max_length=500)
+    performed_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.message
